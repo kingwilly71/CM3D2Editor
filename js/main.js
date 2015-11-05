@@ -4,7 +4,7 @@ var openedFileName;
 var bindings = {
 	showMaidUtil: false,
 
-	version: "1.4.4",
+	version: "1.4.4-tw",
 
 	msgbox: {
 		title: '',
@@ -103,7 +103,7 @@ $('#button-savejson').click(function() {
 
 $('#button-createurl').click(function() {
 	var newWindow = window.open();
-	newWindow.document.body.innerHTML = '如果安装了迅雷 请用右键另存为<br/><a download="' + openedFileName + '.save" href="' + createDataURL(writeSaveData(bindings.save)) + '">CM3D2 Save文件格式</a><br/>' + '<a download="' + openedFileName + '.json" href="' + createDataURL(JSON.stringify(bindings.save, null, 2)) + '">JSON文件格式</a>';
+	newWindow.document.body.innerHTML = '若已安裝續傳軟體(迅雷等)，請按右鍵另存連結<br/><a download="' + openedFileName + '.save" href="' + createDataURL(writeSaveData(bindings.save)) + '">CM3D2 Save文件格式</a><br/>' + '<a download="' + openedFileName + '.json" href="' + createDataURL(JSON.stringify(bindings.save, null, 2)) + '">JSON文件格式</a>';
 });
 
 $('#button-settings').click(function() {
@@ -324,6 +324,7 @@ var util = {
 		var classes = [0, 1, 2, 3, 4, 5, 6];
 		if (localStorage.ytgc001 === "true") classes.push(7);
 		if (localStorage.ytgc002 === "true") classes.push(8);
+		var numOfYotogi = classes.length;
 		for (var i = 0; i < numOfYotogi; i++) {
 			data[i].have = true;
 			data[i].exp.currentExp = 0;
